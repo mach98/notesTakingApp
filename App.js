@@ -1,26 +1,26 @@
 import React from "react";
 
-import {StyleSheet,View, Text} from "react-native";
+import {View, Text} from "react-native";
 
 import {NavigationContainer} from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
+import NotesList from "./Screens/NotesList/NotesList";
+import EditNote from "./Screens/EditNote/EditNote";
+
+const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
-      <View style={styles.container}>
-        <Text>Hello World</Text>
-      </View>
+      <Stack.Navigator
+        screenOptions={{headerShown: 'false'}}
+        initialRouteName={'NotesList'}>
+        <Stack.Screen name="Notes List" component={NotesList} />
+        <Stack.Screen name="Create Note" component={CreateNote}/>
+        <Stack.Screen name="Edit Note" component={EditNote}/>
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-    container:{
-      flex:1,
-      backgroundColor: "#D3D3D3",
-      padding:20
-    }
-});
-
 export default App;

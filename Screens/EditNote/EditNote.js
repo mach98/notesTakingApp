@@ -2,7 +2,7 @@ import React from "react";
 
 import {View, Text} from "react-native";
 
-const NewNote = ()=>{
+const EditNote = ()=>{
 
     return(
         <View>
@@ -12,4 +12,4 @@ const NewNote = ()=>{
 
 }
 
-export default NewNote;
+export default EditNote;
